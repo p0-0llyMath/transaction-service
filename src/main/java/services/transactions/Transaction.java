@@ -1,28 +1,31 @@
-package accounts;
+package services.transactions;
 
 import java.math.BigDecimal;
 import java.util.Currency;
 
+/**
+ * This class represents a transaction.
+ */
 public class Transaction {
 
-    private String from;
-    private String to;
+    private String sender;
+    private String receiver;
     private BigDecimal amount;
     private Currency currency;
 
-    public Transaction(String from, String to, String amount, String currency) {
-        this.from = from;
-        this.to = to;
+    public Transaction(String sender, String receiver, String amount, String currency) {
+        this.sender = sender;
+        this.receiver = receiver;
         this.amount = new BigDecimal(amount);
         this.currency = Currency.getInstance(currency);
     }
 
-    public String getFrom() {
-        return from;
+    public String getSender() {
+        return sender;
     }
 
-    public String getTo() {
-        return to;
+    public String getReceiver() {
+        return receiver;
     }
 
     public BigDecimal getAmount() {
