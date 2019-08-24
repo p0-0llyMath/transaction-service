@@ -22,6 +22,8 @@ public class TransactionService {
     public TransactionService() {
         allowedMaxAmount = new BigDecimal(500);
         accountService = AccountService.getInstance();
+
+        // following lines of code are just for more 'real' execution; definitely not part of a production code
         accountService.addAccount(new Account("dummy1", new BigDecimal(400), Currency.getInstance("GBP")));
         accountService.addAccount(new Account("dummy2", new BigDecimal(10), Currency.getInstance("USD")));
     }
