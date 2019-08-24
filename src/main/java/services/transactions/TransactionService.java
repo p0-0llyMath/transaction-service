@@ -1,8 +1,10 @@
 package services.transactions;
 
+import services.accounts.Account;
 import services.accounts.AccountService;
 
 import java.math.BigDecimal;
+import java.util.Currency;
 
 /**
  * This service is responsible for dealing with operations related to transactions.
@@ -20,6 +22,8 @@ public class TransactionService {
     public TransactionService() {
         allowedMaxAmount = new BigDecimal(500);
         accountService = AccountService.getInstance();
+        accountService.addAccount(new Account("dummy1", new BigDecimal(400), Currency.getInstance("GBP")));
+        accountService.addAccount(new Account("dummy2", new BigDecimal(10), Currency.getInstance("USD")));
     }
 
     /**

@@ -17,7 +17,7 @@ public class TransactionRestApi
 
     public static void main(String[] args) {
         BasicConfigurator.configure();
-        TransactionService transactionService = new TransactionService();;
+        TransactionService transactionService = new TransactionService();
         run(transactionService);
     }
 
