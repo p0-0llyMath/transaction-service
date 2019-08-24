@@ -13,15 +13,23 @@ public class Transaction {
     public Transaction(String from, String to, String amount, String currency) {
         this.from = from;
         this.to = to;
-        this.amount = parseAmount(amount);
-        this.currency = parseCurrency(currency);
+        this.amount = new BigDecimal(amount);
+        this.currency = Currency.getInstance(currency);
     }
 
-    private BigDecimal parseAmount(String amount) {
-
+    public String getFrom() {
+        return from;
     }
 
-    private Currency parseCurrency(String currency) {
-        
+    public String getTo() {
+        return to;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public Currency getCurrency() {
+        return currency;
     }
 }
